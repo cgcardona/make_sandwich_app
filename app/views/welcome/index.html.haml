@@ -1,2 +1,17 @@
-%h1 Welcome#index
-%p Find me in app/views/welcome/index.html.haml
+.content
+  .row
+    .span8
+      #orderFormContainer
+        %h2 Place your order 
+        = form_tag('/') do
+          = select_tag "type", options_for_select([["Meat", "1"], ["Veggie", "2"], ["Vegan", "3"]])
+          = submit_tag 'Place your order'
+    .span4
+      #currentOrderContainer
+        %h3 Current Order: 
+        %p#type 
+          Type: 
+          %span
+        %p#options
+          Options: 
+          %span

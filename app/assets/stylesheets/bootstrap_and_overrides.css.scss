@@ -1,3 +1,23 @@
 @import "bootstrap";
-body { padding-top: 20px; }
 @import "bootstrap-responsive";
+
+body{
+  border-top:5px solid rgb(0, 182, 255);
+
+  .container{
+    width:920px;
+    padding-top: 20px; 
+  }
+
+  header{
+    margin-bottom:20px;
+    height: 40px;
+  }
+
+  header #gt_logo{
+    background: url(/assets/gt_logo.jpg);
+    padding-bottom: 38px;
+    padding-right: 220px;
+    background-repeat: no-repeat;
+  }
+}

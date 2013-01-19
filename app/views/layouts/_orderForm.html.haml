@@ -2,20 +2,17 @@
 = form_tag('/') do
   %label{:for => 'sandwichType'} Type:
   %p= select_tag "sandwichType", options_for_select([['Meat', 'meat'], ['Veggie', 'veggie'], ['Vegan', 'vegan']])
-  %label{:for => 'ingredients'} Ingredients:
+  %p Ingredients:
   %p#meatIngredients
     - ['Turkey', 'Pork', 'Beef'].each do |meatIngredient|
-      %p
-        = check_box_tag 'meatIngredients', meatIngredient, @meatIngredient == meatIngredient
-        = meatIngredient.humanize
-  %p#veggieIngredients
+      = check_box_tag 'meatIngredients', meatIngredient, @meatIngredient == meatIngredient
+      = meatIngredient.humanize
+  %p#veggieIngredients.dsp_none
     - ['Cheese', 'Mayonaise', 'Onion'].each do |veggieIngredient|
-      %p.dsp_none
-        = check_box_tag 'veggieIngredients', veggieIngredient, @veggieIngredient == veggieIngredient
-        = veggieIngredient.humanize
-  %p#veganIngredients
+      = check_box_tag 'veggieIngredients', veggieIngredient, @veggieIngredient == veggieIngredient
+      = veggieIngredient.humanize
+  %p#veganIngredients.dsp_none
     - ['Avocado', 'Tomato', 'Lettuce'].each do |veganIngredient|
-      %p.dsp_none
-        = check_box_tag 'veganIngredients', veganIngredient, @veganIngredient == veganIngredient
-        = veganIngredient.humanize
+      = check_box_tag 'veganIngredients', veganIngredient, @veganIngredient == veganIngredient
+      = veganIngredient.humanize
   = submit_tag 'Place your order'

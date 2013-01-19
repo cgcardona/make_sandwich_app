@@ -52,8 +52,22 @@ window.onload = function()
     {
       var context = this;
       $('#sandwichType').change(function(e){
+        var types = ['meat', 'veggie', 'vegan'];
         context.sandwichType = e.currentTarget.value;
+
+        //$('#' + e.currentTarget.value + 'Ingredients').show();
+        var filteredTypes = _.filter(types, function(num){
+          $('#' + e.currentTarget.value + 'Ingredients').show();
+          if(num != e.currentTarget.value)
+            return num;
+        }) 
+
+        _.each(filteredTypes, function(element, index, list){
+          $('#' + element + 'Ingredients').hide();
+        });
+
         context.updateOrderOutput();
+        
       });
     },
     capitalize : function(str)

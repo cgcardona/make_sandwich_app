@@ -1,5 +1,5 @@
 %h2 Place your order 
-= form_tag('/') do
+= form_tag('/welcome/post') do
   %label{:for => 'sandwichType'} Type:
   %p= select_tag "sandwichType", options_for_select([['Meat', 'meat'], ['Veggie', 'veggie'], ['Vegan', 'vegan']])
   %p Ingredients:

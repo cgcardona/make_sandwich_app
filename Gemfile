@@ -13,6 +13,8 @@ gem "haml-rails", '~>0.3.5'
 
 gem 'bootstrap-sass'
 
+gem "mail", "~> 2.4.4"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

@@ -17,4 +17,4 @@ pickle-email-*.html
 *.swp
 *.swo
 *.DS_Store
-config/initializers/setup_mail.rb 
+/config/initializers/setup_mail.rb 

@@ -55,7 +55,6 @@ window.onload = function()
         var types = ['meat', 'veggie', 'vegan'];
         context.sandwichType = e.currentTarget.value;
 
-        //$('#' + e.currentTarget.value + 'Ingredients').show();
         var filteredTypes = _.filter(types, function(num){
           $('#' + e.currentTarget.value + 'Ingredients').show();
           if(num != e.currentTarget.value)
@@ -66,8 +65,17 @@ window.onload = function()
           $('#' + element + 'Ingredients').hide();
         });
 
+        $('input[type="checkbox"]').attr('checked', false);
+        context.ingredients = [];
         context.updateOrderOutput();
-        
+      });
+      $('#orderFormContainer input[type="checkbox"]').change(function(e){
+        if(e.currentTarget.checked === true)
+          context.ingredients.push(e.currentTarget.value);
+        else if(e.currentTarget.checked === false)
+          context.ingredients.pop(e.currentTarget.value);
+
+        context.updateOrderOutput();
       });
     },
     capitalize : function(str)

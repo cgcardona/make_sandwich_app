@@ -1,7 +1,7 @@
 %h2 Place your order 
 = form_tag('/') do
-  %label{:for => 'type'} Type:
-  %p= select_tag "type", options_for_select([["Meat", "1"], ["Veggie", "2"], ["Vegan", "3"]])
+  %label{:for => 'sandwichType'} Type:
+  %p= select_tag "sandwichType", options_for_select([['Meat', 'meat'], ['Veggie', 'veggie'], ['Vegan', 'vegan']])
   %label{:for => 'ingredients'} Ingredients:
   %p#meatIngredients
     - ['Turkey', 'Pork', 'Beef'].each do |meatIngredient|

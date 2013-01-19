@@ -21,13 +21,22 @@ window.onload = function()
     init : function()
     {
       this.sandwichType = 'meat';
-      this.ingredients  = ['Turkey', 'Pork', 'Beef'];
+      this.ingredients  = [];
+      this.attachEventListeners();
       this.updateOrderOutput();
     },
     updateOrderOutput : function()
     {
       var formValues = this.getFormValues();
-      console.log(formValues);
+      $('#currentOrderContainer #type span').text(this.capitalize(formValues.sandwichType));
+      var context = this;
+      $('#currentOrderContainer #ingredients span').text(function(){
+        var returnStr = '';
+        _.each(context.ingredients, function(element, index, list){
+          returnStr += element + ', ';
+        }, context);
+        return returnStr;
+      });
     },
     getFormValues : function()
     {
@@ -38,6 +47,18 @@ window.onload = function()
     },
     setFormValues : function()
     {
+    },
+    attachEventListeners : function()
+    {
+      var context = this;
+      $('#sandwichType').change(function(e){
+        context.sandwichType = e.currentTarget.value;
+        context.updateOrderOutput();
+      });
+    },
+    capitalize : function(str)
+    {
+      return str.charAt(0).toUpperCase() + str.slice(1);
     }
   };
   MakeSandwich.init();

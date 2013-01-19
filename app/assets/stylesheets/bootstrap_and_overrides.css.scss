@@ -2,7 +2,13 @@
 @import "bootstrap-responsive";
 
 body{
-  border-top:5px solid rgb(0, 182, 255);
+  $generalThingsBlue: #00b6ff;
+
+  .dsp_none{
+    display:none;
+  }
+
+  border-top:5px solid $generalThingsBlue;
   font-weight:200;
   font-family:helvetica;
 
@@ -11,7 +17,7 @@ body{
   }
 
   .container{
-    width:1120px;
+    max-width:1120px;
     padding-top: 20px; 
   }
 
@@ -27,8 +33,8 @@ body{
     background-repeat: no-repeat;
   }
 
-  #currentOrderContainer{
-    border: 1px solid #00b6ff;
+  .cont > div{
+    border: 1px solid $generalThingsBlue;
     border-radius: 5px;
     padding: 0 10px;
   }

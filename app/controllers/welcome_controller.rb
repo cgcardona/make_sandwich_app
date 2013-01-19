@@ -10,6 +10,9 @@ class WelcomeController < ApplicationController
 
     if true 
       WelcomeMailer.send_sandwich_request('m4kesandwich@gmail.com', 'cgcardona@gmail.com', params[:sandwichType], @ingredients).deliver
+      flash[:notice] = 'Your sandwich is on the way!'
+      redirect_to :action => 'index'
+      return
     else
       flash[:error] = 'You must give a name'
       redirect_to :action => 'index'

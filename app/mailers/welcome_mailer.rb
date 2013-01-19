@@ -1,7 +1,8 @@
 class WelcomeMailer < ActionMailer::Base
-  def send_sandwich_request(from, to, sandwichType, ingredients)
+  def send_sandwich_request(from, to, sandwichType, ingredients, quote)
     @sandwich_type = sandwichType 
-    @ingredients = ingredients
+    @ingredients   = ingredients
+    @quote         = quote
     mail( :from => from, :to => to + "<" + to + ">", :subject => "Favor Pleeese :-]") 
   end 
 end

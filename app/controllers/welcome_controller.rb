@@ -20,7 +20,9 @@ class WelcomeController < ApplicationController
       return
     end
 
-    WelcomeMailer.send_sandwich_request(params[:sender], params[:receiver], params[:sandwichType], @ingredients).deliver
+    quote = ['May the Force be with you', 'Live long and prosper', 'Be excellent to each other'].sample
+
+    WelcomeMailer.send_sandwich_request(params[:sender], params[:receiver], params[:sandwichType], @ingredients, quote).deliver
     flash[:notice] = 'Your sandwich is on the way!'
     redirect_to :action => 'index'
     return

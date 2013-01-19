@@ -15,4 +15,8 @@
     - ['Avocado', 'Tomato', 'Lettuce'].each do |veganIngredient|
       = check_box_tag 'veganIngredients[]', veganIngredient, false
       = veganIngredient.humanize
+  %label{:for => 'receiver'} Send to:
+  %p= text_field_tag 'receiver', nil, :placeholder => "Receiver's email address"
+  %label{:for => 'sender'} From:
+  %p= text_field_tag 'sender', nil, :placeholder => "Sender's email address"
   = submit_tag 'Place your order'

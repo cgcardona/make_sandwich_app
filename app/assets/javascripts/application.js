@@ -24,6 +24,8 @@ window.onload = function()
       this.ingredients  = [];
       this.attachEventListeners();
       this.updateOrderOutput();
+      if($('.alert-success')[0] != undefined)
+        this.getFlickr();
     },
     updateOrderOutput : function()
     {
@@ -37,6 +39,18 @@ window.onload = function()
         }, context);
         return returnStr;
       });
+    },
+    getFlickr : function()
+    {
+      $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+        {
+          tags: "sandwich",
+          tagmode: "any",
+          format: "json"
+        },function(data){
+          $('#flickr').html($('<img>').attr('src', data.items[0].media.m));
+        }
+      );
     },
     getFormValues : function()
     {

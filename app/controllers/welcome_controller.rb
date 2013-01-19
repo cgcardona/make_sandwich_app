@@ -24,7 +24,10 @@ class WelcomeController < ApplicationController
 
     WelcomeMailer.send_sandwich_request(params[:sender], params[:receiver], params[:sandwichType], @ingredients, quote).deliver
     flash[:notice] = 'Your sandwich is on the way!'
-    redirect_to :action => 'index'
+    redirect_to :action => 'success'
     return
+  end
+
+  def success
   end
 end

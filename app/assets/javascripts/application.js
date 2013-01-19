@@ -17,5 +17,28 @@
 'use strict';
 window.onload = function()
 {
-  console.log('asdf');
+  var MakeSandwich = {
+    init : function()
+    {
+      this.sandwichType = 'meat';
+      this.ingredients  = ['Turkey', 'Pork', 'Beef'];
+      this.updateOrderOutput();
+    },
+    updateOrderOutput : function()
+    {
+      var formValues = this.getFormValues();
+      console.log(formValues);
+    },
+    getFormValues : function()
+    {
+      return {
+        sandwichType : this.sandwichType,
+        ingredients  : this.ingredients
+      };
+    },
+    setFormValues : function()
+    {
+    }
+  };
+  MakeSandwich.init();
 }

@@ -1,7 +1,8 @@
 %p 
   Please make me a 
-  =@sandwich_type 
+  %strong= @sandwich_type 
   sandwich with the following ingredients:
 %ul
   -@ingredients.each do |ingredient|
-    %li= ingredient
+    %li
+      %strong= ingredient

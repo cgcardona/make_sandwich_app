@@ -5,14 +5,14 @@
   %p Ingredients:
   %p#meatIngredients
     - ['Turkey', 'Pork', 'Beef'].each do |meatIngredient|
-      = check_box_tag 'meatIngredients', meatIngredient, @meatIngredient == meatIngredient
+      = check_box_tag 'meatIngredients[]', meatIngredient, false
       = meatIngredient.humanize
   %p#veggieIngredients.dsp_none
     - ['Cheese', 'Mayonaise', 'Onion'].each do |veggieIngredient|
-      = check_box_tag 'veggieIngredients', veggieIngredient, @veggieIngredient == veggieIngredient
+      = check_box_tag 'veggieIngredients[]', veggieIngredient, false
       = veggieIngredient.humanize
   %p#veganIngredients.dsp_none
     - ['Avocado', 'Tomato', 'Lettuce'].each do |veganIngredient|
-      = check_box_tag 'veganIngredients', veganIngredient, @veganIngredient == veganIngredient
+      = check_box_tag 'veganIngredients[]', veganIngredient, false
       = veganIngredient.humanize
   = submit_tag 'Place your order'

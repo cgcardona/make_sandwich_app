@@ -44,11 +44,11 @@ window.onload = function()
     {
       $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
         {
-          tags: "sandwich",
+          tags: "sandwiches",
           tagmode: "any",
           format: "json"
         },function(data){
-          $('#flickr').html($('<img>').attr('src', data.items[0].media.m));
+          $('#flickr').html($('<img>').attr('src', data.items[_.random(0, (data.items.length - 1))].media.m));
         }
       );
     },

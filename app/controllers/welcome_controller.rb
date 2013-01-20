@@ -14,15 +14,15 @@ class WelcomeController < ApplicationController
       return
     end 
 
-    if params[:receiver].empty? && params[:sender].empty?
-      flash[:error] = 'Please enter an email address for both the sender and receiver.'
+    if params[:receiver].empty? && params[:requestor].empty?
+      flash[:error] = 'Please enter an email address for both the receiver and requestor.'
       redirect_to :action => 'index'
       return
     end
 
     quote = ['May the Force be with you', 'Live long and prosper', 'Be excellent to each other'].sample
 
-    WelcomeMailer.send_sandwich_request(params[:sender], params[:receiver], params[:sandwichType], @ingredients, quote).deliver
+    WelcomeMailer.send_sandwich_request(params[:requestor], params[:receiver], params[:sandwichType], @ingredients, quote).deliver
     flash[:notice] = 'Your sandwich is on the way!'
     redirect_to :action => 'success'
     return

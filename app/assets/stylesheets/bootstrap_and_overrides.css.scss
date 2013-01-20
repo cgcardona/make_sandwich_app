@@ -33,6 +33,10 @@ body{
     background-repeat: no-repeat;
   }
 
+  .cont{
+    margin-bottom:10px;
+  }
+
   .cont > div{
     border: 1px solid $generalThingsBlue;
     border-radius: 5px;

@@ -17,6 +17,6 @@
       = veganIngredient.humanize
   %label{:for => 'receiver'} Send to:
   %p= text_field_tag 'receiver', nil, :placeholder => "Receiver's email address"
-  %label{:for => 'sender'} From:
-  %p= text_field_tag 'sender', nil, :placeholder => "Sender's email address"
+  %label{:for => 'requestor'} From:
+  %p= text_field_tag 'requestor', nil, :placeholder => "Requestor's email address"
   = submit_tag 'Place your order'

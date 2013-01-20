@@ -15,7 +15,7 @@ class WelcomeController < ApplicationController
     end 
 
     if params[:receiver].empty? && params[:requestor].empty?
-      flash[:error] = 'Please enter an email address for both the receiver and requestor.'
+      flash[:error] = 'Please enter an email address for the receiver and a name for the requestor.'
       redirect_to :action => 'index'
       return
     end

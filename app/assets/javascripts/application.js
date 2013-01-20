@@ -44,7 +44,7 @@ window.onload = function()
     {
       $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
         {
-          tags: "sandwiches",
+          tags: "ham and cheese sandwich",
           tagmode: "any",
           format: "json"
         },function(data){

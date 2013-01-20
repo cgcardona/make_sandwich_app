@@ -6,4 +6,11 @@ class WelcomeControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  setup do 
+    @sandwichType = 'meat'
+  end
+  test "should post sandwichType" do
+    post :post
+    assert_not_nil @sandwichType
+  end
 end

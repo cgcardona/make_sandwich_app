@@ -5,8 +5,11 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'sqlite3'
-gem 'pg'
+# use sqlite3 for dev
+gem 'sqlite3'
+
+# and use pg for pushing to heroku
+#gem 'pg'
 
 gem 'json'
 

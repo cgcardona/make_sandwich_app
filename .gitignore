@@ -19,3 +19,4 @@ pickle-email-*.html
 *.DS_Store
 /config/auth_user.yml
 /config/auth_key.yml
+.env
